@@ -78,7 +78,7 @@ exports.login = catchAsync(async (req, res, next) => {
 });
 
 exports.getUserData = catchAsync(async (req, res, next) => {
-    res.status(200).json({ data: req.user })
+  res.status(200).json({ data: req.user });
 });
 
 exports.protect = catchAsync(async (req, res, next) => {
