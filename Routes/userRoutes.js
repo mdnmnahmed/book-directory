@@ -9,7 +9,11 @@ const Router = express.Router();
 //we can't remove user routes we also use later
 Router.route('/signup').post(authController.signup);
 Router.route('/login').post(authController.login);
-Router.route('/getUserData').get(authController.protect, authController.getUserData);
+Router.route('/logout').get(authController.logout);
+Router.route('/getUserData').get(
+  authController.protect,
+  authController.getUserData
+);
 Router.route('/forgotPassword').post(authController.forgotPassword);
 Router.route('/resetPassword/:token').patch(authController.resetPassword);
 Router.route('/updateMyPassword').patch(

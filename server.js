@@ -12,13 +12,9 @@ const app = require('./app');
 
 const DB = process.env.MONGO_STRING.replace('<PASSWORD>', process.env.PASSWORD);
 
-mongoose
-  .connect(DB, {
-    useNewUrlParser: true,
-  })
-  .then(() => {
-    console.log('DB connected successfully 🔥🎉');
-  });
+mongoose.connect(DB).then(() => {
+  console.log('DB connected successfully 🔥🎉');
+});
 
 //define port
 const port = process.env.PORT;
